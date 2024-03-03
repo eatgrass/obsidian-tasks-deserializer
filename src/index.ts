@@ -11,7 +11,6 @@ export type TaskDetails = {
   blockedBy: string[];
   id: string;
   tags: string[];
-  extensions: Record<string, string | null>;
   blockLink: string;
   indentation: string;
   listMarker: string;
@@ -35,7 +34,7 @@ export enum Priority {
   Lowest = "5",
 }
 
-export interface ExtFieldMatcher {
+export interface FieldParser {
   get regex(): RegExp;
   get key(): string;
   getValue(matched: RegExpMatchArray): string;
@@ -196,4 +195,4 @@ export const DATAVIEW_TASK_SYMBOLS: TaskSerializerSymbols = {
   },
 };
 
-export { default } from "./DefaultTaskDeserilizer";
+export { default } from "./DefaultTaskDeserializer";
